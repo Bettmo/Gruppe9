@@ -47,6 +47,140 @@
         .nav-links a:hover {
             text-decoration: underline;
         }
+        .image-container {
+            position: relative;
+            text-align: center;
+            width: 60%;  /* Relative width for responsiveness */
+            height: 400px;
+            margin: 0 auto;  /* Center the image horizontally */
+            padding: 0; /* Remove any padding */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+            border-bottom-right-radius: 25px; /* Rounded bottom-right corner */
+            border-top-left-radius: 0; /* No rounding on top-left */
+            border-top-right-radius: 0; /* No rounding on top-right */
+        }
+
+        /* Group 9 Box Styling */
+        .group-box {
+            position: absolute;
+            bottom: -20px;  /* Positioned over the bottom of the image */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #C8102E;
+            color: white;
+            padding: 15px;
+            width: 50%;  /* Set width to 50% of the image width */
+            border-radius: 25px;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center the text inside the box */
+        }
+
+        @media screen and (max-width: 768px) {
+            /* For smaller screens */
+            .group-box {
+                font-size: 20px;
+                padding: 10px 20px;
+            }
+        }
+        /* Styling for the new section */
+        .Oss {
+            width: 100%; /* Full-width section */
+            margin-top: 50px; /* Adds margin above the section so it doesn't touch the image */
+            display: flex;
+            justify-content: center; /* Centers the content horizontally */
+            padding: 0 20px; /* Adds some padding to the sides to prevent the text from touching the edges of the screen */
+        }
+
+        .hvem-er-vi {
+            max-width: 800px; /* Limit the width of the text for better readability */
+            text-align: center; /* Centers the text inside the container */
+            font-size: 18px; /* Adjust font size for readability */
+            line-height: 1.6; /* Increase line spacing for readability */
+        }
+
+        /* Styling for the "Våre medlemmer" section */
+        .Medlemmer {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .Medlemmer h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .row2 {
+            display: grid;
+            grid-template-columns:repeat(2, 30%); 
+            gap: 10%;
+            justify-content: center;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            height: 700px; 
+            transition: transform 0.3s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        .card:hover {
+            transform: translateY(-10px); /* Add some hover effect */
+        }
+
+        .card .img-container {
+            height: 60%; /* Set a fixed height for the image container */
+            overflow: hidden; /* Hide any overflow */
+            border-radius: 10px;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container without distortion */
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px 0;
+            font-size: 24px;
+            color: #C8102E; /* Match the color scheme */
+        }
+
+        .card p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 768px) {
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .Medlemmer h1 {
+                font-size: 28px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -63,6 +197,84 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Image Section -->
+    <div class="image-container">
+        <img src="Images/UiA.jpg" alt="Main Image">
+        <div class="group-box">Gruppe 9</div>
+    </div>
+
+    <section class="Oss">
+        <div class="hvem-er-vi">
+            <p>Gruppe 9 har jobbet sammen siden vårt første semester på universitetet, og gjennom tiden har vi utviklet et sterkt samarbeid. Vi har lært å utnytte hverandres styrker, kommunisere effektivt sammen, løser utfordringer sammen. </p>
+        </div>
+    </section>
+
+    <section class="Medlemmer">
+        <h1>Våre medlemmer</h1>
+        <div class="row2">
+            <!-- Box Number 1 (Eric)-->
+            <div class="column">
+                <div class="card">
+                    <div class="img-container">
+                        <img draggable="false" src="Images/Eric.jpg" />
+                    </div>
+                    <h3>Eric A. Bettmo</h3>
+                    <p>Scrum master<br>Fullstack</p>
+                    <p>Eric Bettmo er 24 år gammel fra Oslo, Han går på sitt tredje år ved universitet i Agder på bacheloren i IT og Informasjonssytemer. På fritiden liker Eric å spille dataspill, følge med på fotball og trene. Ellers går fritiden til Eric på styreverv i Systematicus, hvor han er økonomiansvarlig </p>
+                </div>
+            </div>
+             <!-- Box Number 2 (Herman)-->
+            <div class="column"> 
+                <div class="card">
+                    <div class="img-container">
+                        <img draggable="false" src="./Images/herman.jpg"/>
+                    </div>
+                    <h3>Herman K. Erlingsen</h3>
+                    <p>Assisterende Scrum master<br>FrontEnd</p>
+                    <p>Mitt navn er Herman Kjøsterud Erlingsen og jeg er 21 år gammel fra Asker. Jeg er nå på mitt tredje år i bacheloren “IT og informasjonssystemer” på UiA. Gjennom studiet og forskjellige IT-fag på ungdomsskolen og VGS har jeg skaffet meg en interesse for programmering, og har dannet meg en kompetanse innenfor bruk av teknologiske verktøy og forskjellige programmeringsspråk inkludert Java, C#, PHP, SQL, HTML, CSS og JavaScript. 
+                        Utenfor studiet er noen av mine interesser innenfor PC og videospill samt trening for hurtigløp på skøyter, der jeg også har vært trener i noen sesonger. 
+                    </p>
+                </div>
+            </div>
+            <!--Trym-->
+            <div class="column">
+                <div class="card">
+                    <div class="img-container">
+                        <img draggable="false" src="./Images/trym.jpg" />
+                    </div>
+                    <h3>Trym</h3>
+                    <p>Gruppe medlem<br>UX og Sikkerhet</p>
+                    <p>Mitt navn er Trym Meli Lundby og jeg er 20 år gammel fra Rykkinn i Bærum. Jeg tar bachelor i IT og informasjonssystemer og er nå i mitt 5. semester, hvor jeg har lært mye om IT, cybersikkerhet, og prosjekt behandling. Utenfor studiet har jeg stor interesse for PC og videospill, hvor jeg har fått mye kunnskap om hvordan PC-er og programmer fungerer. </p>
+                </div>
+            </div>
+            <!--Umit-->
+            <div class="column">
+                <div class="card">
+                    <div class="img-container">
+                        <img draggable="false" src="Images/trym.jpg"/>
+                    </div>
+                    <h3>Sofia Sae-lim</h3>
+                    <p>Gruppe medlem<br>Database og BackEnd</p>
+                    <p>Jeg er en 21 år gammel student fra Oslo som går mitt tredje år på bacheloren IT og Informasjonssystemer ved UiA. Jeg anser meg selv som en jovial person som setter pris på samarbeid. På fritiden min trives jeg med å lese alt fra fagprosaka til skjønnslitteratur. Jeg har alltid hatt en interesse for IT. På VGS hadde jeg valgemnet IT der jeg fikk bekreftet at dette er retningen jeg ønsker å ta. Gjennom studieforløpet har jeg fått erfaring innenfor komponentene ved en datamaskin, diverse programmeringsspråk, bærekraftig digitalisering, skytjenester, og databaser. </p>
+                </div>
+            </div>
+            <!--Brage-->
+            <div class="column">
+                <div class="card">
+                    <div class="img-container">
+                        <img draggable="false" src="Images/brage.jpg" />
+                    </div>
+                    <h3>Brage Kjemperud</h3>
+                    <p>Produkteier<br>Fullstack</p>
+                    <p>Jeg er en 23 år gammel mann fra Modum som er på mitt 3 år I bacheloren IT og informasjonssystemer. Gjennom studiet har jeg fått meg solid kunnskap innen universell utforming og cybersikkerhet. Inkludert kunnskapen nevnt tidligere har jeg også en stor interesse for nettverksløsninger og Linux. Jeg har også erfaring med flere verktøy og programmeringsspråk, inkludert SQL, Java, C#, Golang, PHP, HTML og CSS.
+                        I fritiden min pleier jeg å spille, gå tur og høre på klassisk musikk, enten gjennom konserter fra det lokale symfoniorkesteret eller digitalt.
+                    </p>
+                </div>
+            </div>
+        </div>    
+    </section>
+
 
 </body>
 </html>
