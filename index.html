@@ -1,9 +1,68 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            background-color: #C8102E;
+            height: 56dp;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Logo Styling */
+        .logo img {
+            width: 90px;
+            height: 90px;
+        }
+
+        /* For navigation items */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-left: auto; /* Push links to the right */
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
-    <p>Hei verden!</p>
-    dette var veldig spennende
 
-    tester git
-</body>    
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="Images/logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
+</body>
 </html>
