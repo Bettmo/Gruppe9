@@ -17,7 +17,7 @@
         /* Navigation Bar Styling */
         nav {
             background-color: #ffffff;
-            height: 50dp;
+            height: 50dp; /* Adjusted to px from dp */
             display: flex;
             align-items: center;
             padding: 0 20px;
@@ -33,18 +33,37 @@
         .nav-links {
             display: flex;
             list-style: none;
-            margin-left: auto; 
+            margin-left: auto;
         }
+
         .nav-links li {
             margin-left: 30px;
         }
+
         .nav-links a {
             text-decoration: none;
             color: white;
             font-size: 18px;
         }
+
         .nav-links a:hover {
             text-decoration: underline;
+        }
+
+        /* Kontakt oss Button */
+        .kontakt-link {
+            background-color: #5AA65F; 
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px; 
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .kontakt-link:hover {
+            background-color: #3E7344; /* Darken on hover */
+            text-decoration: none;
         }
 
         /* Hero Section CSS */
@@ -107,6 +126,7 @@
             text-align: center;
             padding: 50px 0px;
             background-color: #f9f9f9;
+            height: 2200px;
         }
 
         .Medlemmer h1 {
@@ -216,6 +236,44 @@
             color: red;
         }
 
+        .Kontakt {
+            background-color: #E5F4E6; /* Light green background to keep it subtle */
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .Kontakt h2 {
+            color: #3E7344; /* A darker shade of your main green for the header */
+            margin-bottom: 20px;
+        }
+
+        .Kontaktoss {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+
+        .Kontaktoss p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .Kontaktoss a {
+            color: #5AA65F; /* Use main green color for links */
+            text-decoration: none;
+        }
+
+        .Kontaktoss a:hover {
+            text-decoration: underline;
+        }
+
+        
+
+
         /* Telefon & Pads */
         @media screen and (max-width: 768px) {
             .image-container {
@@ -290,6 +348,19 @@
             .logo img {
                 content: url("Images/Logo_grønn.png");
             }
+
+            .kontakt-link {
+            background-color: #ffffff; 
+            color: #5AA65F;
+            }
+
+            .nav-links a {
+            color: #5AA65F;
+            }
+
+            .kontakt-link:hover {
+                background-color: #3E7344; /* Darken on hover */
+            }
         }
         /* for veldig store skjermer */
         @media screen and (min-width: 2000px) {
@@ -303,12 +374,14 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigasjon-->
     <nav>
         <div class="logo">
             <img src="Images/Logo.png" alt="Logo">
         </div>
         <ul class="nav-links">
+            <!-- Add other links here if needed -->
+            <li><a href="#kontakt" class="kontakt-link">Kontakt oss</a></li>
         </ul>
     </nav>
 
@@ -320,7 +393,7 @@
 
     <section class="Oss">
         <div class="hvem-er-vi">
-            <p>Gruppe 9 har jobbet sammen siden vårt første semester på universitetet, og gjennom tiden har vi utviklet et sterkt samarbeid. Vi har lært å utnytte hverandres styrker, kommunisere effektivt sammen, løser utfordringer sammen. </p>
+            <p>Gruppe 9 har jobbet sammen siden første semester på UiA, og i løpet av denne tiden har vi lært mye nytt og spennende samtidig som vi har blitt et godt sammensveiset team. Vi har lært å spille på hverandres styrker, kommunisere effektivt og løse utfordringer sammen. Vi er veldig engasjerte i teknologi og holder oss oppdatert på alt som skjer, spesielt innen kunstig intelligens. For oss er det viktig at teknologi er tilgjengelig for alle, og derfor er digitalt utenforskap noe vi brenner for. Målet vårt er å utvikle løsninger som alle kan bruke, så vi kan bidra til at teknologi bringer folk sammen og skaper gode opplevelser for alle </p>
         </div>
     </section>
 
@@ -417,9 +490,16 @@
         </div>    
     </section>
 
-    <Footer>
-
-    </Footer>
-
+    <section class="Kontakt" id="kontakt">
+        <h2>Kontakt oss</h2>
+        <div class="Kontaktoss">
+            <p>For spørsmål eller henvendelser, ta kontakt med vår gruppeleder:</p>
+            <p><br><strong>Eric A. Bettmo</strong><br>
+               <a href="mailto:eabettmo@uia.no">eabettmo@uia.no</a><br>
+               Telefon: <a href="tel:+4793003188">930 03 188</a>
+            </p>
+        </div>
+    </section>
+    
 </body>
 </html>
