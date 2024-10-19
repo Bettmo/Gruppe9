@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forside - Gruppe 9</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            background-color: #C8102E;
+            height: 56dp;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Logo Styling */
+        .logo img {
+            width: 90px;
+            height: 90px;
+        }
+
+        /* For navigation items */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-left: auto; /* Push links to the right */
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .image-container {
+            position: relative;
+            text-align: center;
+            width: 60%;  /* Relative width for responsiveness */
+            height: 400px;
+            margin: 0 auto;  /* Center the image horizontally */
+            padding: 0; /* Remove any padding */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+            border-bottom-right-radius: 25px; /* Rounded bottom-right corner */
+            border-top-left-radius: 0; /* No rounding on top-left */
+            border-top-right-radius: 0; /* No rounding on top-right */
+        }
+
+        /* Group 9 Box Styling */
+        .group-box {
+            position: absolute;
+            bottom: -20px;  /* Positioned over the bottom of the image */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #C8102E;
+            color: white;
+            padding: 15px;
+            width: 50%;  /* Set width to 50% of the image width */
+            border-radius: 25px;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center the text inside the box */
+        }
+
+        @media screen and (max-width: 768px) {
+            /* For smaller screens */
+            .group-box {
+                font-size: 20px;
+                padding: 10px 20px;
+            }
+        }
+        /* Styling for the new section */
+        .Oss {
+            width: 100%; /* Full-width section */
+            margin-top: 50px; /* Adds margin above the section so it doesn't touch the image */
+            display: flex;
+            justify-content: center; /* Centers the content horizontally */
+            padding: 0 20px; /* Adds some padding to the sides to prevent the text from touching the edges of the screen */
+            margin-bottom: 40px;
+        }
+
+        .hvem-er-vi {
+            max-width: 800px; /* Limit the width of the text for better readability */
+            text-align: center; /* Centers the text inside the container */
+            font-size: 18px; /* Adjust font size for readability */
+            line-height: 1.6; /* Increase line spacing for readability */
+        }
+
+        /* Styling for the "Våre medlemmer" section */
+        .Medlemmer {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .Medlemmer h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .row2 {
+            display: grid;
+            grid-template-columns:repeat(1, 80%); 
+            gap: 2%;
+            justify-content: center;
+            height: 2300px;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            height: 370px; 
+            transition: transform 0.3s ease-in-out;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 30% 70%;
+        }
+
+        .card:hover {
+            transform: scale(1.02); /* Add some hover effect */
+        }
+
+        .card .img-container {
+            height: 250px; /* Set a fixed height for the image container */
+            overflow: hidden; /* Hide any overflow */
+            border-radius: 10px;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container without distortion */
+            border-radius: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .card_2{
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            padding: 0 20px;
+        }
+        .card_3{
+            text-align: center;
+        }
+        .card_4 a img{
+            width: 80px;
+            transition: 0.2s;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .card_4 a img:hover{
+            transform: scale(1.1); /* Add some hover effect */
+        }
+        .card_4 a img:active{
+            transform: scale(0.95); /* Add some hover effect */
+            cursor: progress;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px 0;
+            font-size: 24px;
+            color: #C8102E; /* Match the color scheme */
+        }
+
+        .card p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 768px) {
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .Medlemmer h1 {
+                font-size: 28px;
+            }
+        }
+        footer{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="Images/logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+        </ul>
+    </nav>
+
+    <!-- Image Section -->
+    <div class="image-container">
+        <img src="Images/UiA.jpg" alt="Main Image">
+        <div class="group-box">Gruppe 9</div>
+    </div>
+
+    <section class="Oss">
+        <div class="hvem-er-vi">
+            <p>Gruppe 9 har jobbet sammen siden vårt første semester på universitetet, og gjennom tiden har vi utviklet et sterkt samarbeid. Vi har lært å utnytte hverandres styrker, kommunisere effektivt sammen, løser utfordringer sammen. </p>
+        </div>
+    </section>
+
+    <section class="Medlemmer">
+        <h1>Våre medlemmer</h1>
+        <div class="row2">
+            <!-- Box Number 1 (Eric)-->
+            <div class="card">
+                <div class="img-container">
+                    <img draggable="false" src="./Images/Eric.jpg"/>
+                </div>
+                <div class="card_2">
+                    <div class="card_3">
+                        <h3>Eric A. Bettmo</h3>
+                        <p>Gruppeleder<br>Fullstack</p>
+                        <p><br></p>
+                    </div>
+                    <p>Eric Bettmo er 24 år gammel fra Oslo, Han går på sitt tredje år ved universitet i Agder på bacheloren i IT og Informasjonssytemer. På fritiden liker Eric å spille dataspill, følge med på fotball og trene. Ellers går fritiden til Eric på styreverv i Systematicus, hvor han er økonomiansvarlig. 
+                    </p>
+                    <div class="card_4"><a href="https://www.linkedin.com/in/eric-bettmo/" target="_blank"><img src="./Images/linkedin_logo.png" alt="LN-logo"></a></div>
+                </div>
+            </div>
+             <!-- Box Number 2 (Herman)-->
+            <div class="card">
+                <div class="img-container">
+                    <img draggable="false" src="./Images/Herman.jpg"/>
+                </div>
+                <div class="card_2">
+                    <div class="card_3">
+                        <h3>Herman K. Erlingsen</h3>
+                        <p>Assisterende leder<br>FrontEnd</p>
+                        <p><br></p>
+                    </div>
+                    <p>Herman Kjøsterud Erlingsen er 21 år gammel fra Asker. Han går nå på sitt tredje år i bacheloren “IT og informasjonssystemer” på UiA. Gjennom studiet og forskjellige IT-fag på ungdomsskolen og VGS har han skaffet seg en interesse for programmering, og har dannet seg en god kompetanse innenfor bruk av teknologiske verktøy og forskjellige programmeringsspråk. Utenfor studiet er noen av hans interesser innenfor fotografering samt trening og sport. Han har vært fotograf ved flere anledninger, oftest i kombinasjon med sport.
+                    </p>
+                    <div class="card_4"><a href="https://www.linkedin.com/in/herman-kjosterud-erlingsen/" target="_blank"><img src="./Images/linkedin_logo.png" alt="LN-logo"></a></div>
+                </div>
+            </div>
+            <!--Trym-->
+            <div class="card">
+                <div class="img-container">
+                    <img draggable="false" src="./Images/Trym.jpg"/>
+                </div>
+                <div class="card_2">
+                    <div class="card_3">
+                        <h3>Trym Meli Lundby</h3>
+                        <p>Gruppemedlem<br>UX og Sikkerhet</p>
+                        <p><br></p>
+                    </div>
+                    <p>Trym Meli Lundby er 20 år gammel fra Rykkinn i Bærum. Han tar bachelor i IT og informasjonssystemer og er nå i sitt 5. semester, hvor han har lært mye om IT, cybersikkerhet, og prosjektbehandling. Utenfor studiet har Trym stor interesse for PC og videospill, hvor han har fått mye kunnskap om hvordan PC-er og programmer fungerer. 
+                    </p>
+                    <div class="card_4"><a href="https://www.linkedin.com/in/trym-lundby-b760b832b/" target="_blank"><img src="./Images/linkedin_logo.png" alt="LN-logo"></a></div>
+                </div>
+            </div>
+            <!--Sofia-->
+            <div class="card">
+                <div class="img-container">
+                    <img draggable="false" src="./Images/Sofia.jpg"/>
+                </div>
+                <div class="card_2">
+                    <div class="card_3">
+                        <h3>Sofia Sae-Lim</h3>
+                        <p>Gruppemedlem<br>Database og BackEnd</p>
+                        <p><br></p>
+                    </div>
+                    <p>Sofia Sae-Lim er 21 år gammel fra Oslo, som går sitt tredje år på bacheloren IT og Informasjonssystemer ved UiA. Hun anser seg selv som en jovial person som setter pris på samarbeid. På fritiden trives hun med å lese alt fra fagprosa til skjønnslitteratur. Sofia har alltid hatt en interesse for IT. På VGS hadde hun valgemnet IT der hun fikk bekreftet at dette var retningen hun ønsket å ta. Gjennom studieforløpet har hun fått erfaring innenfor komponentene ved en datamaskin, diverse programmeringsspråk, bærekraftig digitalisering, skytjenester, og databaser. 
+                    </p>
+                    <div class="card_4"><a href="https://www.linkedin.com/in/sofia-sae-lim-861699214/" target="_blank"><img src="./Images/linkedin_logo.png" alt="LN-logo"></a></div>
+                </div>
+            </div>
+            <!--Brage-->
+            <div class="card">
+                <div class="img-container">
+                    <img draggable="false" src="./Images/Brage.jpg"/>
+                </div>
+                <div class="card_2">
+                    <div class="card_3">
+                        <h3>Brage Kjemperud</h3>
+                        <p>Gruppemedlem<br>Fullstack</p>
+                        <p><br></p>
+                    </div>
+                    <p>Brage Kjemperud er 23 år gammel fra Modum. Gjennom studiet har han fått solid kunnskap innen universell utforming og cybersikkerhet. Inkludert kunnskapen nevnt tidligere har han også en stor interesse for nettverksløsninger og Linux. Brage har også erfaring med flere verktøy og programmeringsspråk, inkludert SQL, Java, C#, Golang, PHP, HTML og CSS. I fritiden pleier han å spille, gå tur og høre på klassisk musikk, enten digitalt eller gjennom konserter fra det lokale symfoniorkesteret.
+                    </p>
+                    <div class="card_4"><a href="https://www.linkedin.com/in/brage-kjemperud-187b0117b/" target="_blank"><img src="./Images/linkedin_logo.png" alt="LN-logo"></a></div>
+                </div>
+            </div>
+
+
+        </div>    
+    </section>
+
+    <Footer>
+
+    </Footer>
+
+</body>
+</html>
